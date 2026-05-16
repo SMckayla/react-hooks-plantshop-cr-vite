@@ -13,15 +13,19 @@ const [search, setSearch] = useState("");
     .then((data) => setPlants(data));
 }, []);
 
+function addPlant(newPlant) {
+  setPlants([...plants, newPlant]);
+}
+
 const filteredPlants = plants.filter((plant) =>
   plant.name.toLowerCase().includes(search.toLowerCase())
 );
 
   return (
     <main>
-      <NewPlantForm />
-      <Search />
-      <PlantList />
+      <NewPlantForm addPlant={addPlant}/>
+      <Search search={search} setSearch={setSearch}/>
+      <PlantList plants={filteredPlants}/>
     </main>
   );
 }
