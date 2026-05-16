@@ -17,6 +17,16 @@ function addPlant(newPlant) {
   setPlants([...plants, newPlant]);
 }
 
+function toggleStock(id) {
+    setPlants(
+      plants.map((plant) =>
+        plant.id === id
+          ? { ...plant, isInStock: !plant.isInStock }
+          : plant
+      )
+    );
+  }
+
 const filteredPlants = plants.filter((plant) =>
   plant.name.toLowerCase().includes(search.toLowerCase())
 );
