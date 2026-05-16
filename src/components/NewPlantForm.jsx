@@ -26,6 +26,7 @@ function NewPlantForm({addPlant}) {
       .then((res) => res.json())
       .then((newPlant) => {
         addPlant(newPlant);
+         setFormData({ name: "", image: "", price: "" });
       });
   }
 
