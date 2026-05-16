@@ -1,7 +1,7 @@
 import React from "react";
 
 function PlantCard({plant, toggleStock}) {
-   const [inStock, setInStock] = useState(true);
+   
 
   return (
     <li className="card" data-testid="plant-item">
