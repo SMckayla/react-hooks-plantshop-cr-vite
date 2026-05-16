@@ -12,6 +12,11 @@ const [search, setSearch] = useState("");
     .then((res) => res.json())
     .then((data) => setPlants(data));
 }, []);
+
+const filteredPlants = plants.filter((plant) =>
+  plant.name.toLowerCase().includes(search.toLowerCase())
+);
+
   return (
     <main>
       <NewPlantForm />
