@@ -4,6 +4,11 @@ import PlantList from "./PlantList";
 import Search from "./Search";
 
 function PlantPage() {
+  useEffect(() => {
+  fetch("http://localhost:6001/plants")
+    .then((res) => res.json())
+    .then((data) => setPlants(data));
+}, []);
   return (
     <main>
       <NewPlantForm />
